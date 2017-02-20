@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Terra Technica 2017</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="stylesheets/fonts.css">
+		<link rel="stylesheet" href="stylesheets/reset.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+
+	<body>
+		<div id="sphere-container"
+			 data-start="background: linear-gradient(rgb(67, 198, 172), rgb(248, 255, 174));"
+			 data-end="background: linear-gradient(rgb(64, 58, 62) , rgb(190, 88, 105));"></div>
+
+		<div id="skrollr-body" class="full-page">
+
+			<!-- Banner -->
+
+			<section class="full-page v-center-wrap h-center-wrap">
+				<div class="v-center-box">
+					<h1 data-start="transform: translate( 0em ); letter-spacing: .3em; opacity: 1;"
+						data-end="transform: translate( -50em ); letter-spacing: 2em; opacity: 0;">
+						Initiatives
+					</h1>
+				</div>
+			</section>
+
+			<!-- Udaan -->
+
+			<section class="row">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Udaan
+				</h2>
+				<p data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					The national report revealed that 52% of class 5 students cannot read a class 2 level text, and that around 75% of class 5 children are unable to do simple division. Udaan has come up as an urgent and a concrete step to ameliorate the present scenario. Every volunteer at Udaan has set the goal of eliminating the problem of education inequity so that every child gets an opportunity to tread on the path of progress. Because as a society, we must realize that children are the future of our country and education is the key to success.
+				</p>
+			</section>
+
+			<!-- Blood Donation -->
+
+			<section class="row clearfix align-right space-end">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Blood Donation
+				</h2>
+				<p data-start="opacity: 0;"
+					data-center="opacity: 1;">
+					"The value of life is not in its duration but in its donation. The donation of blood and thus, that of life is the greatest of them all". Team TerraTechnica’17 successfully organized blood donation campaign in association with Red Cross Society to encourage young donors to sign up as blood donors and start saving lives.
+				</p>
+			</section>
+
+		</div>
+
+		<script src="scripts/three.js"></script>
+		<script>
+			var hlow = 0.5;
+			var hrange = 0.3;
+			var sval = 0.75;
+			var vlow = 0.25;
+			var vrange = 0.5;
+		</script>
+		<script src="scripts/sphere.js"></script>
+		<script src="scripts/skrollr.js"></script>
+		<script>
+			var s = skrollr.init( { forceHeight: false } );
+		</script>
+	</body>
+</html>

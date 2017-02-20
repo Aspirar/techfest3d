@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Terra Technica 2017</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="stylesheets/fonts.css">
+		<link rel="stylesheet" href="stylesheets/reset.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+
+	<body>
+		<div id="sphere-container"
+			 data-start="background: linear-gradient(rgb(255,110,127), rgb(191,233,255));"
+			 data-end="background: linear-gradient(rgb(67,198,172) , rgb(25,22,84));"></div>
+
+		<div id="skrollr-body" class="full-page">
+
+			<!-- Banner -->
+
+			<section class="full-page v-center-wrap h-center-wrap">
+				<div class="v-center-box">
+					<h1 data-start="transform: translate( 0em ); letter-spacing: .3em; opacity: 1;"
+						data-end="transform: translate( -50em ); letter-spacing: 2em; opacity: 0;">
+						Hackathon
+					</h1>
+				</div>
+			</section>
+
+			<!-- Brief -->
+
+			<section class="row">
+				<p class="h-center"
+				   data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					Hackathon is an onsite mobile app building competition where we give you an opportunity to design and develop your own mobile or even web app, show off your skills to win the battle and be the master of web world.
+				</p>
+			</section>
+
+			<!-- Problem Statement -->
+
+			<section class="row">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Problem Statement
+				</h2>
+				<p data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					Your team will be required to build an app from scratch, based on the given theme. With two days to make it, you and your team can code all day and seek learning resources as well, so participate whether or not you know how to make an app or not. The submissions will then be judged on a number of criteria and the best will be declared the winner.
+				</p>
+			</section>
+
+			<!-- Rules -->
+
+			<section class="row clearfix align-right space-end">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Rules
+				</h2>
+				<ul data-start="opacity: 0;"
+					data-center="opacity: 1;">
+					<li>
+	        			This is a team event. There can be 1-5 members in a team.
+	        		</li>
+	        		<li>
+	        			Your team will be required to create an application.
+	        		</li>
+	        		<li>
+	        			The app can be for any platform, or even a web app. The only requirement is that it should be mobile compatible.
+	        		</li>
+	        		<li>
+	        			Hackathon will be a two day event, during which you can code your app. It is to be built from scratch, but you can use free libraries in your code.
+	        		</li>
+	        		<li>
+	        			Your submissions will be judged on a number of criteria, and the best will be chosen as the winner.
+	        		</li>
+				</ul>
+			</section>
+
+		</div>
+
+		<script src="scripts/three.js"></script>
+		<script>
+			var hlow = 0.5;
+			var hrange = 0.3;
+			var sval = 0.75;
+			var vlow = 0.25;
+			var vrange = 0.5;
+		</script>
+		<script src="scripts/sphere.js"></script>
+		<script src="scripts/skrollr.js"></script>
+		<script>
+			var s = skrollr.init( { forceHeight: false } );
+		</script>
+	</body>
+</html>

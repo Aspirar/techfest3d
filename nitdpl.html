@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Terra Technica 2017</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="stylesheets/fonts.css">
+		<link rel="stylesheet" href="stylesheets/reset.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+
+	<body>
+		<div id="sphere-container"
+			 data-start="background: linear-gradient(rgb(255,110,127), rgb(191,233,255));"
+			 data-end="background: linear-gradient(rgb(67,198,172) , rgb(25,22,84));"></div>
+
+		<div id="skrollr-body" class="full-page">
+
+			<!-- Banner -->
+
+			<section class="full-page v-center-wrap h-center-wrap">
+				<div class="v-center-box">
+					<h1 data-start="transform: translate( 0em ); letter-spacing: .3em; opacity: 1;"
+						data-end="transform: translate( -50em ); letter-spacing: 2em; opacity: 0;">
+						NITD<br>Programming<br>League
+					</h1>
+				</div>
+			</section>
+
+			<!-- Brief -->
+
+			<section class="row">
+				<p class="h-center"
+				   data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					Linus Torvalds minced no words while he made that statement. For those who think themselves as the problem solvers and all the code freaks out there, Terra Technica&apos;17 is back with a platform for you to prove your mettle. This could be the event that gives you that confidence  to code which could change your life forever.
+				</p>
+			</section>
+
+			<!-- Problem Statement -->
+
+			<section class="row">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Problem Statement
+				</h2>
+				<p data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					This is a competitive programming event. There will be a set of questions, and participants will be required to write programs to solve them (in C, C++ or Java), which will be judged by an online judge. The team which solves the maximum number of questions in least time will be declared as the winner.
+				</p>
+			</section>
+
+			<!-- Rules -->
+
+			<section class="row clearfix align-right space-end">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Rules
+				</h2>
+				<ul data-start="opacity: 0;"
+					data-center="opacity: 1;">
+					<li>
+	        			This is a team event. There can be 1-3 members in a team.
+	        		</li>
+	        		<li>
+	        			Your team will be required to write programs to solve the given problems, which will then have to be submitted to an online judge.
+	        		</li>
+	        		<li>
+	        			Your programs can be written in one of either C, C++ or Java language.
+	        		</li>
+	        		<li>
+	        			There will be a runtime limit for each problem. Your solution should pass all the hidden test data within that time limit to receive the accepted verdict.
+	        		</li>
+	        		<li>
+	        			The winner will be declared on the basis of number of questions solved. If number of questions solved is same, the winner will be the team who solves the problems in least amount of time.
+	        		</li>
+	        		<li>
+	        			There will be a time penalty for each wrong submission to the online judge, but not for compilation error.
+	        		</li>
+	        		<li>
+	        			Team will have no access to cellphones.
+	        		</li>
+	        		<li>
+	        			Taking help of any kind will result in immediate disqualification.
+	        		</li>
+				</ul>
+			</section>
+
+		</div>
+
+		<script src="scripts/three.js"></script>
+		<script>
+			var hlow = 0.5;
+			var hrange = 0.3;
+			var sval = 0.75;
+			var vlow = 0.25;
+			var vrange = 0.5;
+		</script>
+		<script src="scripts/sphere.js"></script>
+		<script src="scripts/skrollr.js"></script>
+		<script>
+			var s = skrollr.init( { forceHeight: false } );
+		</script>
+	</body>
+</html>

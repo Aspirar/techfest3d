@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Terra Technica 2017</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="stylesheets/fonts.css">
+		<link rel="stylesheet" href="stylesheets/reset.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+
+	<body>
+		<div id="sphere-container"
+			 data-start="background: linear-gradient(rgb(247, 151, 30), rgb(255, 210, 0);"
+			 data-end="background: linear-gradient(rgb(9, 48, 40) , rgb(35, 122, 87));"></div>
+
+		<div id="skrollr-body" class="full-page">
+
+			<!-- Banner -->
+
+			<section class="full-page v-center-wrap h-center-wrap">
+				<div class="v-center-box">
+					<h1 data-start="transform: translate( 0em ); letter-spacing: .3em; opacity: 1;"
+						data-end="transform: translate( -50em ); letter-spacing: 2em; opacity: 0;">
+						Untangle<br>The<br>Tangle
+					</h1>
+				</div>
+			</section>
+
+			<!-- Brief -->
+
+			<section class="row">
+				<p class="h-center"
+				   data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					Whizzing through the land of maths and science , this event will take you through the world of deciphers, while testing your basic fundamental maths and science skills every step of the way.
+				</p>
+			</section>
+
+			<!-- Problem Statement -->
+
+			<section class="row">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Problem Statement
+				</h2>
+				<p data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					Untangle the tangle is a quirky sudoko puzzle where the participants have to put a digit from 1 to N in each cell of the grid so that every row, column, bold region contains each digit once, where N is the number of rows and columns in the puzzle. But here is the catch; to unveil the first few numbers the participants are required to answer some of the technical questions which would lead them to a number. The numbers thus obtained needs to be added to the cells and consequently the sudoko has to be solved.
+				</p>
+			</section>
+
+			<!-- Rules -->
+
+			<section class="row clearfix align-right space-end">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Rules
+				</h2>
+				<ul data-start="opacity: 0;"
+					data-center="opacity: 1;">
+					<li>
+	        			Remote participation is not allowed. Student have to be present at the venue.
+	        		</li>
+	        		<li>
+	        			This is an individual event.
+	        		</li>
+	        		<li>
+	        			Duration of the event is 90 minutes.
+	        		</li>
+	        		<li>
+	        			Participant who will solve the Sudoko in minimum time will win the event.
+	        		</li>
+	        		<li>
+	        			Students are required to come with their own laptop and charger.
+	        		</li>
+	        		<li>
+	        			Leaderboard will be displayed on the website after completion of event.
+	        		</li>
+				</ul>
+			</section>
+
+		</div>
+
+		<script src="scripts/three.js"></script>
+		<script>
+			var hlow = 0.5;
+			var hrange = 0.3;
+			var sval = 0.75;
+			var vlow = 0.25;
+			var vrange = 0.5;
+		</script>
+		<script src="scripts/sphere.js"></script>
+		<script src="scripts/skrollr.js"></script>
+		<script>
+			var s = skrollr.init( { forceHeight: false } );
+		</script>
+	</body>
+</html>

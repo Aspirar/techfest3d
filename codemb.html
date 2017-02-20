@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Terra Technica 2017</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="stylesheets/fonts.css">
+		<link rel="stylesheet" href="stylesheets/reset.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+
+	<body>
+		<div id="sphere-container"
+			 data-start="background: linear-gradient(rgb(48, 232, 191), rgb(255, 130, 53));"
+			 data-end="background: linear-gradient(rgb(195, 55, 100) , rgb(29, 38, 113));"></div>
+
+		<div id="skrollr-body" class="full-page">
+
+			<!-- Banner -->
+
+			<section class="full-page v-center-wrap h-center-wrap">
+				<div class="v-center-box">
+					<h1 data-start="transform: translate( 0em ); letter-spacing: .3em; opacity: 1;"
+						data-end="transform: translate( -50em ); letter-spacing: 2em; opacity: 0;"
+						style="text-transform: none;">
+						CodEmb
+					</h1>
+				</div>
+			</section>
+
+			<!-- Brief -->
+
+			<section class="row">
+				<p class="h-center"
+				   data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					Have always been dwelling over the complexity of circuits and computer programs? Catch the current, vanquish the voltage. Walk through the chaos of electrical sophistication, coding skills and emerge as the winner. Solve the toughest circuits and come up with their practicality. Invoke, implement, innovate, initialise. It’s never always been the Transformers – CodEmb
+				</p>
+			</section>
+
+			<!-- Problem Statement -->
+
+			<section class="row">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Problem Statement
+				</h2>
+				<p data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					Participants individually compete in two different rounds of the challenge. In each round, participants are assigned an embedded task. Participants need to bring their own Atmel series (only) microcontroller and related hardware or an Arduino development board and code in the Arduino IDE (only). Participants are provided the required hardware to implement the specified task in each round (except the microcontroller and related hardware).
+				</p>
+				<h3 data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+				   ROUND 1
+				</h3>
+				<ul data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					<li>
+	                    A simple task is given to check the understanding of programming concepts.
+	                </li>
+	                <li>
+	                    The participant has to raise his/her hand in order to get tagged with the timestamp after writing the code in order to tabulate their position in the ranking table.
+	                </li>
+	                <li>
+	                    Now, the participant is provided with the required hardware. He/she gets a single chance to showcase the output on the hardware.
+	                </li>
+	                <li>
+	                    If the participant fails to showcase the output on the hardware on the first try, he/she is disqualified immediately.
+	                </li>
+	                <li>
+	                    Only a maximum of 30% of the participants are filtered into next round based on their ranking.
+	                </li>
+	                <li>
+	                    If the expected number of participants are unable to qualify for the next round, then the whole procedure is repeated with participants allowed to have a second try on the hardware. Participants in this case, who have accomplished the task in the first try itself, move to the next round immediately.
+	                </li>
+				</ul>
+				<h3 data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;"
+				   class="space-top">
+				   ROUND 2
+				</h3>
+				<ul data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					<li>
+	                    This round will test the knowledge of the participants based on simple communication protocols using a module and/or other sensors.
+	                </li>
+	                <li>
+	                    Participants are not allowed to use libraries other than those that are in-built in the Arduino IDE.
+	                </li>
+	                <li>
+	                    Information about the module will be provided before 10 days to fest on the official website of the fest and in the android app.
+	                </li>
+	                <li>
+	                    Top two performers based on their rank attained by a similar procedure in round 1 win the prizes.
+	                </li>
+				</ul>
+			</section>
+
+			<!-- Rules -->
+
+			<section class="row clearfix align-right space-end">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Rules
+				</h2>
+				<ul data-start="opacity: 0;"
+					data-center="opacity: 1;">
+					<li>
+	                    A simple task is given to check the understanding of programming concepts.
+	                </li>
+	                <li>
+	                    The participant has to raise his/her hand in order to get tagged with the timestamp after writing the code in order to tabulate their position in the ranking table.
+	                </li>
+	                <li>
+	                    Now, the participant is provided with the required hardware. He/she gets a single chance to showcase the output on the hardware.
+	                </li>
+	                <li>
+	                    If the participant fails to showcase the output on the hardware on the first try, he/she is disqualified immediately.
+	                </li>
+	                <li>
+	                    Only a maximum of 30% of the participants are filtered into next round based on their ranking.
+	                </li>
+	                <li>
+	                    If the expected number of participants are unable to qualify for the next round, then the whole procedure is repeated with participants allowed to have a second try on the hardware. Participants in this case, who have accomplished the task in the first try itself, move to the next round immediately.
+	                </li>
+				</ul>
+			</section>
+
+		</div>
+
+		<script src="scripts/three.js"></script>
+		<script>
+			var hlow = 0.5;
+			var hrange = 0.3;
+			var sval = 0.75;
+			var vlow = 0.25;
+			var vrange = 0.5;
+		</script>
+		<script src="scripts/sphere.js"></script>
+		<script src="scripts/skrollr.js"></script>
+		<script>
+			var s = skrollr.init( { forceHeight: false } );
+		</script>
+	</body>
+</html>
