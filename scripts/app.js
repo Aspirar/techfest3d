@@ -257,6 +257,10 @@ function init() {
 
 	addFences( scene, objects );
 
+	//Staircase 2
+
+	addStaircase2( scene, objects );
+
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
 	renderer.setClearColor( 0xffffff );
 	renderer.setPixelRatio( window.devicePixelRatio );
