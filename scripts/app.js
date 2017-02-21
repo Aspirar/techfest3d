@@ -9,6 +9,9 @@ var specialObjects = [];
 
 var raycaster, clickraycaster;
 
+var cameraLightSphere;
+var cameraLight;
+
 var container    = document.getElementById( 'container' );
 var blocker      = document.getElementById( 'blocker' );
 var instructions = document.getElementById( 'instructions' );
@@ -123,21 +126,31 @@ function init() {
 	camera = new THREE.PerspectiveCamera( 75,
 										  window.innerWidth / window.innerHeight,
 										  1,
-										  1000 );
+										  4000 );
 
 	//Crosshair
 
 	geometry = new THREE.PlaneGeometry( 0.1, 0.1 );
-	material = new THREE.MeshBasicMaterial( { color: 0x000000, wireframe: true } );
+	material = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } );
 	mesh = new THREE.Mesh( geometry, material );
 	camera.add( mesh );
 	mesh.position.set( 0, 0, -10 );
 
 	scene = new THREE.Scene();
-	scene.fog = new THREE.Fog( 0xffffff, 0, 750 );
+	scene.fog = new THREE.Fog( 0x020202, 0, 750 );
+
+	var light = new THREE.HemisphereLight(0xeeeeff, 0x777788, 0.25);
+	light.position.set(0.5, 1, 0.75);
+	scene.add(light);
 
 	controls = new THREE.PointerLockControls( camera );
 	scene.add( controls.getObject() );
+
+	//Camera Light
+
+	cameraLight = new THREE.PointLight( 0xffffff, 5, 50, 2 );
+	camera.add( cameraLight );
+
 
 	if ( haveDeviceOrientation ) {
 
@@ -172,7 +185,7 @@ function init() {
 				break;
 
 			case 32:
-				if ( canJump === true ) velocity.y += 1000;
+				if ( canJump === true ) velocity.y += 300;
 				canJump = false;
 				break;
 
@@ -229,6 +242,10 @@ function init() {
 	raycaster = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, -1, 0 ), 0, 10 );
 	clickraycaster = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, 0, -1 ), 0, 100 );
 
+	//Sky
+
+	addSky( scene );
+
 	//Floor
 
 	addFloor( scene, objects );
@@ -261,6 +278,18 @@ function init() {
 
 	addStaircase2( scene, objects );
 
+	//Circle Pattern
+
+	addCirclePattern( scene, objects );
+
+	//Buildings
+
+	addBuildings( scene, objects );
+
+	//Flying Fortresses
+
+	addFortress( scene, objects );
+
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
 	renderer.setClearColor( 0xffffff );
 	renderer.setPixelRatio( window.devicePixelRatio );
@@ -280,6 +309,7 @@ function onWindowResize() {
 
 }
 
+var angle = 0;
 function animate() {
 
 	requestAnimationFrame( animate );
@@ -322,11 +352,11 @@ function animate() {
 
 		}
 
-		if ( moveForward )  velocity.z -= 1000.0 * delta;
-		if ( moveBackward ) velocity.z += 1000.0 * delta;
+		if ( moveForward )  velocity.z -= 400.0 * delta;
+		if ( moveBackward ) velocity.z += 400.0 * delta;
 
-		if ( moveLeft )  velocity.x -= 1000.0 * delta;
-		if ( moveRight ) velocity.x += 1000.0 * delta;
+		if ( moveLeft )  velocity.x -= 400.0 * delta;
+		if ( moveRight ) velocity.x += 400.0 * delta;
 
 		if ( isOnObject === true ) {
 

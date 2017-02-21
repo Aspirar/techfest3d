@@ -39,7 +39,9 @@ function addHalls( sene, objects ) {
 
 	}
 
-	var material = new THREE.MeshBasicMaterial( { color: 0x00ff00, wireframe: true } );
+	addVertexColors( geometry.faces, 0.1, 0.2, 0.25, 0.1, 0.1 );
+
+	var material = new THREE.MeshLambertMaterial( { vertexColors: THREE.VertexColors, shading: THREE.FlatShading } );
 
 	var mesh = new THREE.Mesh( geometry, material );
 	mesh.position.set( -50, 0, -500 );

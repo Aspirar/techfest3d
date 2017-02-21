@@ -19,14 +19,24 @@ function makeFence() {
 function addFences( scene, objects ) {
 
 	var geometry = makeFence();
+	addVertexColors( geometry.faces, 0.5, 0.3, 0.75, 0.75, 0.25 );
 
-	var material = new THREE.MeshBasicMaterial( { color: 0x0000ff, wireframe: true, side: THREE.DoubleSide } );
+	var material = new THREE.MeshPhongMaterial( {
+
+		vertexColors: THREE.VertexColors,
+		side: THREE.DoubleSide,
+		shading: THREE.FlatShading
+
+	} );
 
 	var mesh = new THREE.Mesh( geometry, material );
 	mesh.rotation.y = Math.PI / 2;
 	mesh.position.set( -300, 0, -100 );
 	scene.add( mesh );
 
-	objects.push( mesh );
+	mesh = new THREE.Mesh( geometry, material );
+	mesh.rotation.y = Math.PI / 4;
+	mesh.position.set( 200, 0, 70 );
+	scene.add( mesh );
 
 }

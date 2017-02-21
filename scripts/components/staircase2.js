@@ -17,7 +17,9 @@ function addStaircase2( scene, objects ) {
 
 	}
 
-	var material = new THREE.MeshBasicMaterial( { color: 0x0000ff, wireframe: true } );
+	addVertexColors( geometry.faces, 0.55, 0.05, 0.98, 0.42, 0.05 );
+
+	material = new THREE.MeshLambertMaterial( { vertexColors: THREE.VertexColors, shading: THREE.FlatShading } );
 
 	var mesh = new THREE.Mesh( geometry, material );
 	mesh.position.set( -100, 0, 300 );

@@ -40,6 +40,7 @@
 
 	var renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
 	renderer.setClearColor( new THREE.Color( 0xffffff ), 0 );
+	renderer.setPixelRatio( window.devicePixelRatio );
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.getElementById( 'sphere-container' ).appendChild( renderer.domElement );
 

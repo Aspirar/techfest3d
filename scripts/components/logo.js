@@ -29,13 +29,21 @@ function addLogo( scene, objects ) {
 
 		geometry1.merge( geometry2 );
 
-		var material = new THREE.MeshBasicMaterial( { color: 0x0000ff, wireframe: true } );
+		addVertexColors( geometry1.faces, 0.94, 0.05, 1, 0.45, 0.1 );
+
+		var material = new THREE.MeshPhongMaterial( { vertexColors: THREE.VertexColors, shading: THREE.FlatShading } );
 
 		var mesh = new THREE.Mesh( geometry1, material );
 		mesh.position.set( -50, 0, -75 );
 		scene.add( mesh );
 
 		objects.push( mesh );
+
+		var spotLight = new THREE.SpotLight( 0xffffff, 1, 2000, Math.PI / 6, 1, 2 );
+		spotLight.position.set( 300, 100, -100 );
+		spotLight.target = mesh;
+
+		scene.add( spotLight );
 
 	} );
 
