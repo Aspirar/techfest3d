@@ -5,17 +5,24 @@ function addEvents( scene, objects, specialObjects ) {
 	loader.load( 'scripts/MontserratHairline.json', function ( font ) {
 		
 		var geometry, mesh, material;
+		var light;
 		var text, userLink;
 
 		geometry = makeHeadingText( 'EVENTS', font );
 
-		material = new THREE.MeshBasicMaterial( { color: 0x0000ff, wireframe: true } );
+		addVertexColors( geometry.faces, 0.5, 0.2, 0.75, 0.3, 0.3 );
+
+		material = new THREE.MeshPhongMaterial( { vertexColors: THREE.VertexColors, shading: THREE.FlatShading } );
 
 		mesh = new THREE.Mesh( geometry, material );
 		mesh.position.set( -50, 0, -500 );
 		scene.add( mesh );
 
 		objects.push( mesh );
+
+		light = new THREE.PointLight( 0xffffff, 1, 800, 2 );
+		light.position.set( -50, 20, -500 );
+		scene.add( light );
 
 		var num = 7;
 		var geometry2;
@@ -69,7 +76,9 @@ function addEvents( scene, objects, specialObjects ) {
 
 			geometry = makeText( text, font );
 
-			material = new THREE.MeshBasicMaterial( { color: 0x0000ff, wireframe: true } );
+			addVertexColors( geometry.faces, 0, 0.1, 0.75, 0.25, 0.25 );
+
+			material = new THREE.MeshPhongMaterial( { vertexColors: THREE.VertexColors } );
 
 			mesh = new THREE.Mesh( geometry, material );
 			var angle = i * 2 * Math.PI / num;
@@ -81,7 +90,9 @@ function addEvents( scene, objects, specialObjects ) {
 			objects.push( mesh );
 			specialObjects.push( mesh );
 
-			material = new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true } );
+			addVertexColors( geometry2.faces, 0, 0, 1, 0.4, 0.2 );
+
+			material = new THREE.MeshPhongMaterial( { vertexColors: THREE.VertexColors, shading: THREE.FlatShading } );
 
 			mesh = new THREE.Mesh( geometry2, material );
 			mesh.position.set( - 50 + 200 * Math.cos( angle ), 20, - 500 + 200 * Math.sin( angle ) );
