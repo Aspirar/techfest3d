@@ -41,7 +41,7 @@ body {
 	line-height: 1.5;
 }
 
-#click-icon {
+.icon-img {
 	position: fixed;
 	display: none;
 	z-index: 1000;
@@ -50,6 +50,23 @@ body {
 	padding: .5rem;
 	background-color: rgba(0, 0, 0, .5);
 	border-radius: 50%;
-	left: 1rem;
 	bottom: 1rem;
+	cursor: pointer;
+}
+#vr-icon {
+	right: 1rem;
+	display: block;
+}
+#click-icon {
+	left: 1rem;
+}
+#jump-icon {
+	left: 4.5rem;
+}
+
+.left-container,
+.right-container {
+	width: 50%;
+	height: 100%;
+	float: left;
 }

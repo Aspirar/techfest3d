@@ -19,7 +19,7 @@ function makeFence() {
 function addFences( scene, objects ) {
 
 	var geometry = makeFence();
-	addVertexColors( geometry.faces, 0.5, 0.3, 0.75, 0.75, 0.25 );
+	addVertexColors( geometry.faces, 0.5, 0.3, 0.75, 0.25, 0.25 );
 
 	var material = new THREE.MeshPhongMaterial( {
 

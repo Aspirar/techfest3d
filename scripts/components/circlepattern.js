@@ -29,8 +29,12 @@ function addCirclePattern( scene, objects ) {
 	mesh.position.set( 200, 0, 200 );
 	scene.add( mesh );
 
-	var light = new THREE.PointLight( 0xffffff, 1, 400, 2 );
+	var light = new THREE.PointLight( 0xffffff, 3, 400, 2 );
 	light.position.set( 200, 30, 200 );
+	scene.add( light );
+
+	light = new THREE.PointLight( 0xffffff, 2, 400, 2 );
+	light.position.set( 92, 30, 114 );
 	scene.add( light );
 
 }
