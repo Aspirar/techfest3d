@@ -15,7 +15,7 @@ function makeDomes( scene, objects ) {
 	geometry1.translate( 180, 0, -250 );
 	geometry.merge( geometry1 );
 
-	light = new THREE.PointLight( 0xffffff, 1, 200, 2 );
+	light = new THREE.PointLight( 0xffffff, 2, 200, 2 );
 	light.position.set( 180, 20, -250 );
 	scene.add( light );
 
@@ -24,7 +24,7 @@ function makeDomes( scene, objects ) {
 	geometry1.translate( 330, 0, -270 );
 	geometry.merge( geometry1 );
 
-	light = new THREE.PointLight( 0xffffff, 1, 200, 2 );
+	light = new THREE.PointLight( 0xffffff, 2, 200, 2 );
 	light.position.set( 330, 20, -270 );
 	scene.add( light );
 

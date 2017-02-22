@@ -1,4 +1,4 @@
-var camera, scene, renderer;
+var camera, scene, renderer, renderer2;
 var geometry, material, mesh;
 var controls;
 
@@ -12,11 +12,10 @@ var raycaster, clickraycaster;
 var cameraLightSphere;
 var cameraLight;
 
-var container    = document.getElementById( 'container'    );
-var blocker      = document.getElementById( 'blocker'      );
-var instructions = document.getElementById( 'instructions' );
-var clickButton  = document.getElementById( 'click-icon'   );
-var jumpButton   = document.getElementById( 'jump-icon'    );
+var leftcontainer  = document.getElementById( 'left-container'  );
+var rightcontainer = document.getElementById( 'right-container' );
+var blocker        = document.getElementById( 'blocker'         );
+var instructions   = document.getElementById( 'instructions'    );
 
 var havePointerLock = 'pointerLockElement'       in document
 				   || 'mozPointerLockElement'    in document
@@ -81,12 +80,6 @@ if ( havePointerLock ) {
 
 	blocker.style.display = 'none';
 
-	clickButton.style.display = 'block';
-	clickButton.addEventListener( 'click', onMouseDown, false );
-
-	jumpButton.style.display = 'block';
-	jumpButton.addEventListener( 'click', onJumpClicked, false );
-
 } else {
 
 	instructions.innerHTML = 'Your browser seems to be unsupported.';
@@ -113,21 +106,8 @@ if ( haveDeviceOrientation ) {
 
 }
 
-var moveForward  = false;
-var moveBackward = false;
-var moveLeft     = false;
-var moveRight    = false;
-var canJump      = false;
-
 var prevTime = performance.now();
 var velocity = new THREE.Vector3();
-
-function onJumpClicked( event ) {
-
-	if ( canJump ) velocity.y += 300;
-	canJump = false;
-
-}
 
 init();
 animate();
@@ -170,85 +150,6 @@ function init() {
 		orientationControls.object.rotation.set( 0, -Math.PI / 4, 0 );
 
 	}
-
-	var onKeyDown = function ( event ) {
-
-		switch ( event.keyCode ) {
-
-			case 38:
-			case 87:
-				moveForward = true;
-				break;
-
-			case 37:
-			case 65:
-				moveLeft = true;
-				break;
-
-			case 40:
-			case 83:
-				moveBackward = true;
-				break;
-
-			case 39:
-			case 68:
-				moveRight = true;
-				break;
-
-			case 32:
-				if ( canJump === true ) velocity.y += 1000;
-				canJump = false;
-				break;
-
-		}
-
-	};
-
-	var onKeyUp = function ( event ) {
-
-		switch ( event.keyCode ) {
-
-			case 38:
-			case 87:
-				moveForward = false;
-				break;
-
-			case 37:
-			case 65:
-				moveLeft = false;
-				break;
-
-			case 40:
-			case 83:
-				moveBackward = false;
-				break;
-
-			case 39:
-			case 68:
-				moveRight = false;
-				break;
-
-		}
-
-	};
-
-	document.addEventListener( 'keydown', onKeyDown, false );
-	document.addEventListener( 'keyup'  , onKeyUp  , false );
-
-	var onTouchStart = function () {
-
-		moveForward = true;
-
-	};
-
-	var onTouchEnd = function () {
-
-		moveForward = false;
-
-	};
-
-	container.addEventListener( 'touchstart', onTouchStart, false );
-	container.addEventListener( 'touchend'  , onTouchEnd  , false );
 
 	raycaster = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, -1, 0 ), 0, 10 );
 	clickraycaster = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, 0, -1 ), 0, 100 );
@@ -308,8 +209,15 @@ function init() {
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
 	renderer.setClearColor( 0xffffff );
 	renderer.setPixelRatio( window.devicePixelRatio );
-	renderer.setSize( window.innerWidth, window.innerHeight );
-	document.body.appendChild( renderer.domElement );
+	renderer.setSize( leftcontainer.offsetWidth, leftcontainer.offsetHeight );
+	leftcontainer.appendChild( renderer.domElement );
+
+	renderer2 = new THREE.WebGLRenderer( { antialias: true } );
+	renderer2.setClearColor( 0xffffff );
+	renderer2.setPixelRatio( window.devicePixelRatio );
+	renderer2.setSize( leftcontainer.offsetWidth, leftcontainer.offsetHeight );
+	rightcontainer.appendChild( renderer2.domElement );
+
 
 	window.addEventListener( 'resize', onWindowResize, false );
 
@@ -317,10 +225,11 @@ function init() {
 
 function onWindowResize() {
 
-	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.aspect = leftcontainer.offsetWidth / leftcontainer.offsetHeight;
 	camera.updateProjectionMatrix();
 
-	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setSize( leftcontainer.offsetWidth, leftcontainer.offsetHeight );
+	renderer2.setSize( leftcontainer.offsetWidth, leftcontainer.offsetHeight );
 
 }
 
@@ -367,12 +276,8 @@ function animate() {
 
 		}
 
-		if ( moveForward )  velocity.z -= 1000.0 * delta;
-		if ( moveBackward ) velocity.z += 1000.0 * delta;
-
-		if ( moveLeft )  velocity.x -= 1000.0 * delta;
-		if ( moveRight ) velocity.x += 1000.0 * delta;
-
+		velocity.z -= 200.0 * delta;
+		
 		if ( isOnObject === true ) {
 
 			velocity.y = Math.max( 0, velocity.y );
@@ -405,5 +310,6 @@ function animate() {
 	}
 
 	renderer.render( scene, camera );
+	renderer2.render( scene, camera );
 
 }

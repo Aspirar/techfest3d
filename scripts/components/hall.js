@@ -27,6 +27,7 @@ function makeHall() {
 function addHalls( sene, objects ) {
 
 	var num = 7;
+	var light;
 
 	var geometry = new THREE.Geometry();
 
@@ -36,6 +37,10 @@ function addHalls( sene, objects ) {
 		var hallGeometry = makeHall();
 		hallGeometry.translate( 200 * Math.cos( angle ), 0, 200 * Math.sin( angle ) );
 		geometry.merge( hallGeometry );
+
+		light = new THREE.PointLight( 0xffffff, 3, 400, 2 );
+		light.position.set( -50 + 200 * Math.cos( angle ), 20, -500 + 200 * Math.sin( angle ) );
+		scene.add( light );
 
 	}
 

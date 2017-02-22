@@ -27,4 +27,8 @@ function addStaircase2( scene, objects ) {
 
 	objects.push( mesh );
 
+	var light = new THREE.PointLight( 0xffffff, 3, 300, 2 );
+	light.position.set( -100, 10, 300 );
+	scene.add( light );
+
 }
