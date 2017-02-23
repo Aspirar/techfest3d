@@ -7,7 +7,12 @@ body {
 	margin: 0;
 	overflow: hidden;
 	background-color: white;
-	font: 700 12px/18px 'Montserrat';
+	font: 200 12px/18px 'Montserrat';
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 1.5em;
 }
 
 .container {
@@ -23,22 +28,20 @@ body {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, .5);
+	background-color: rgba(0, 0, 0, .9);
 	display: -webkit-flex;
 	display:         flex;
-	cursor: pointer;
 }
 
 .instructions {
 	margin: auto;
 	color: white;
 	text-align: center;
-	font-size: 1.5em;
-	font-weight: 700;
+	font-size: 1em;
 	text-transform: uppercase;
 	letter-spacing: .3em;
 	padding-left: .3em;
-	line-height: 1.5;
+	line-height: 2;
 }
 
 .icon-img {
@@ -69,4 +72,15 @@ body {
 	width: 50%;
 	height: 100%;
 	float: left;
+}
+
+.btn {
+	display: inline-block;
+	padding: .5em 1em;
+	border: 2px solid white;
+	cursor: pointer;
+}
+.btn:active {
+	color: black;
+	background-color: white;
 }

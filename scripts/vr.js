@@ -128,11 +128,14 @@ function init() {
 	mesh.position.set( 0, 0, -10 );
 
 	scene = new THREE.Scene();
-	scene.fog = new THREE.Fog( 0x020202, 0, 750 );
+	scene.fog = new THREE.Fog( 0x020202, 0, 1500 );
 
 	var light = new THREE.HemisphereLight(0xeeeeff, 0x777788, 0.5);
 	light.position.set(0.5, 1, 0.75);
 	scene.add(light);
+
+	var ambientLight = new THREE.AmbientLight( 0x222222 );
+	scene.add( ambientLight );
 
 	controls = new THREE.PointerLockControls( camera );
 	scene.add( controls.getObject() );
