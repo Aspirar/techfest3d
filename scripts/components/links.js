@@ -1,6 +1,6 @@
 function makeDomeGeometry() {
 
-	var geometry = new THREE.SphereGeometry( 60, 10, 10, 0, 1.5 * Math.PI, - Math.PI / 4, 0.75 * Math.PI );
+	var geometry = new THREE.SphereGeometry( 65, 10, 10, 0, 1.5 * Math.PI, - Math.PI / 4, 0.75 * Math.PI );
 	return geometry;
 
 }
@@ -15,18 +15,15 @@ function makeDomes( scene, objects ) {
 	geometry1.translate( 180, 0, -250 );
 	geometry.merge( geometry1 );
 
-	light = new THREE.PointLight( 0xffffff, 2, 200, 2 );
-	light.position.set( 180, 20, -250 );
-	scene.add( light );
-
 	geometry1 = makeDomeGeometry();
 	geometry1.rotateY( Math.PI / 2 );
 	geometry1.translate( 330, 0, -270 );
 	geometry.merge( geometry1 );
 
-	light = new THREE.PointLight( 0xffffff, 2, 200, 2 );
-	light.position.set( 330, 20, -270 );
-	scene.add( light );
+	geometry1 = makeDomeGeometry();
+	geometry1.rotateY( Math.PI / 2 );
+	geometry1.translate( 255, 0, -130 );
+	geometry.merge( geometry1 );
 
 	addVertexColors( geometry.faces, 0.3, 0.2, 0.92, 0.3, 0.1 );
 
@@ -42,6 +39,10 @@ function makeDomes( scene, objects ) {
 	scene.add( mesh );
 
 	objects.push( mesh );
+
+	light = new THREE.PointLight( 0xffffff, 3, 800, 2 );
+	light.position.set( 250, 50, -200 );
+	scene.add( light );
 	
 }
 
@@ -81,6 +82,21 @@ function addLinks( scene, objects, specialObjects ) {
 		mesh = new THREE.Mesh( geometry, material );
 		mesh.userLink = 'initiatives.html';
 		mesh.position.set( 300, 0, -300 );
+		scene.add( mesh );
+
+		objects.push( mesh );
+		specialObjects.push( mesh );
+
+		geometry = makeHeadingText( 'EXHIBITIONS', font );
+		geometry.rotateY( - Math.PI / 4 );
+
+		addVertexColors( geometry.faces, 0.5, 0.2, 0.75, 0.3, 0.3 );
+
+		material = new THREE.MeshPhongMaterial( { vertexColors: THREE.VertexColors, shading: THREE.FlatShading } );
+
+		mesh = new THREE.Mesh( geometry, material );
+		mesh.userLink = 'exhibitions.html';
+		mesh.position.set( 200, 0, -135 );
 		scene.add( mesh );
 
 		objects.push( mesh );

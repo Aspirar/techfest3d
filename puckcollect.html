@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Terra Technica 2017</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="stylesheets/fonts.css">
+		<link rel="stylesheet" href="stylesheets/reset.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+
+	<body>
+		<div id="sphere-container"
+			 data-start="background: linear-gradient(rgb(48, 232, 191), rgb(255, 130, 53));"
+			 data-end="background: linear-gradient(rgb(195, 55, 100) , rgb(29, 38, 113));"></div>
+
+		<div id="skrollr-body" class="full-page">
+
+			<!-- Banner -->
+
+			<section class="full-page v-center-wrap h-center-wrap">
+				<div class="v-center-box">
+					<h1 data-start="transform: translate( 0em ); letter-spacing: .3em; opacity: 1;"
+						data-end="transform: translate( -50em ); letter-spacing: 2em; opacity: 0;">
+						Puck<br>Collect
+					</h1>
+				</div>
+			</section>
+
+			<!-- Brief -->
+
+			<section class="row">
+				<p class="h-center"
+				   data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					Terra technica'17 is back with its dais ready for young and ardent minds to exhibit their innovation in designing and to prove their mettle in the RIDE under technology.
+				</p>
+				<p class="h-center"
+				   data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+				   Let's not waste any more time in awaiting the opportunity, just get busy in availing it. Enter the field of robo-mech war, with your bots ready to collect their assigned pucks and leave the place with excitement of triumph over opponents.
+				</p>
+				<p class="h-center"
+				   data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+				   Come … conquer &amp; savour victory!!
+				</p>
+			</section>
+
+			<!-- Problem Statement -->
+
+			<section class="row">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Problem Statement
+				</h2>
+				<p data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					Two Remote Controlled robots compete. 10 pucks of each assigned colour are distributed randomly on the Arena. The aim is to collect all pucks of the assigned colour and carry them to the own home base.
+				</p>
+			</section>
+
+			<!-- Rules -->
+
+			<section class="row align-right">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Rules
+				</h2>
+				<ul data-start="opacity: 0;"
+					data-center="opacity: 1;"
+					data-end="opacity: 0;">
+					<li>
+	        			 Max Size of robot can be 30 x 30 CM.
+	        		</li>
+	        		<li>
+	        			  Participants can use any wireless technology for remote control.
+	        		</li>
+	        		<li>
+	        			Robot must not physically separate into pieces.
+	        		</li>
+	        		<li>
+	        			Participants are allowed to buy robotic gripper or build their own(preferred).
+	        		</li>
+				</ul>
+			</section>
+
+			<div class="clearfix"></div>
+
+			<!-- Arena Specifications -->
+
+			<section class="row h-center-wrap">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Arena Specifications
+				</h2>
+				<img class="image h-center"
+					 src="assets/images/events/puckcollect.png"
+					 data-start="opacity: 0;"
+					 data-center="opacity: 1;"
+					 data-end="opacity: 0;">
+			</section>
+
+			<!-- Contact Info -->
+
+			<section class="row space-end">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Event Manager
+				</h2>
+				<p data-start="opacity: 0;"
+				   data-center="opacity: 1;">
+					Ajay Meena<br>
+					9718687448
+				</p>
+			</section>
+
+		</div>
+
+		<script src="scripts/three.js"></script>
+		<script>
+			var hlow = 0.5;
+			var hrange = 0.3;
+			var sval = 0.75;
+			var vlow = 0.25;
+			var vrange = 0.5;
+		</script>
+		<script src="scripts/sphere.js"></script>
+		<script src="scripts/skrollr.js"></script>
+		<script>
+			var s = skrollr.init( { forceHeight: false } );
+		</script>
+	</body>
+</html>
