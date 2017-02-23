@@ -20,11 +20,11 @@ function addEvents( scene, objects, specialObjects ) {
 
 		objects.push( mesh );
 
-		light = new THREE.PointLight( 0xffffff, 1, 800, 2 );
+		light = new THREE.PointLight( 0xffffff, 3, 1200, 2 );
 		light.position.set( -50, 20, -500 );
 		scene.add( light );
 
-		var num = 7;
+		var num = 8;
 		var geometry2;
 
 		for ( var i = 0; i < num; i++ ) {
@@ -71,6 +71,12 @@ function addEvents( scene, objects, specialObjects ) {
 					text = 'Untangle the Tangle';
 					geometry2 = new THREE.SphereGeometry( 5, 8, 8 );
 					userLink = 'untangle.html';
+					break;
+
+				case 7:
+					text = 'Puck Collect';
+					geometry2 = new THREE.CylinderGeometry( 7, 4, 5, 5 );
+					userLink = 'puckcollect.html';
 					break;
 			}
 

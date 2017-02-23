@@ -31,7 +31,7 @@ function addFences( scene, objects ) {
 
 	var mesh = new THREE.Mesh( geometry, material );
 	mesh.rotation.y = Math.PI / 2;
-	mesh.position.set( -300, 0, -100 );
+	mesh.position.set( -350, 0, -100 );
 	scene.add( mesh );
 
 	mesh = new THREE.Mesh( geometry, material );

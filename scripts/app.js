@@ -154,6 +154,9 @@ function init() {
 	light.position.set(0.5, 1, 0.75);
 	scene.add(light);
 
+	var ambientLight = new THREE.AmbientLight( 0x222222 );
+	scene.add( ambientLight );
+
 	controls = new THREE.PointerLockControls( camera );
 	scene.add( controls.getObject() );
 
