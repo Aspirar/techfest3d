@@ -14,7 +14,8 @@ var cameraLight;
 
 var container    = document.getElementById( 'container'    );
 var blocker      = document.getElementById( 'blocker'      );
-var instructions = document.getElementById( 'instructions' );
+var instructions = document.getElementById( 'instructions-inner' );
+var startButton  = document.getElementById( 'start-btn'    );
 var clickButton  = document.getElementById( 'click-icon'   );
 var jumpButton   = document.getElementById( 'jump-icon'    );
 
@@ -68,7 +69,7 @@ if ( havePointerLock ) {
 	document.addEventListener(    'mozpointerlockerror', pointerlockerror, false );
 	document.addEventListener( 'webkitpointerlockerror', pointerlockerror, false );
 
-	blocker.addEventListener( 'click', function ( event ) {
+	startButton.addEventListener( 'click', function ( event ) {
 
 		element.requestPointerLock = element.requestPointerLock
 								  || element.mozRequestPointerLock
@@ -79,7 +80,15 @@ if ( havePointerLock ) {
 
 } else if ( haveDeviceOrientation ) {
 
-	blocker.style.display = 'none';
+	instructions.innerHTML = 'Look Around = Move Device<br>'
+						   + 'Move Forward = Tap Screen<br>'
+						   + 'Click / Jump = Use Buttons on the Bottom<br><br>';
+
+	startButton.addEventListener( 'click', function ( event ) {
+
+		blocker.style.display = 'none';
+
+	}, false );
 
 	clickButton.style.display = 'block';
 	clickButton.addEventListener( 'click', onMouseDown, false );
@@ -90,6 +99,7 @@ if ( havePointerLock ) {
 } else {
 
 	instructions.innerHTML = 'Your browser seems to be unsupported.';
+	startButton.style.display = 'none';
 
 }
 
@@ -148,7 +158,7 @@ function init() {
 	mesh.position.set( 0, 0, -10 );
 
 	scene = new THREE.Scene();
-	scene.fog = new THREE.Fog( 0x020202, 0, 750 );
+	scene.fog = new THREE.Fog( 0x020202, 0, 1500 );
 
 	var light = new THREE.HemisphereLight(0xeeeeff, 0x777788, 0.5);
 	light.position.set(0.5, 1, 0.75);
