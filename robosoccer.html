@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Terra Technica 2017</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="stylesheets/fonts.css">
+		<link rel="stylesheet" href="stylesheets/reset.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+
+	<body>
+		<div id="sphere-container"
+			 data-start="background: linear-gradient(rgb(48, 232, 191), rgb(255, 130, 53));"
+			 data-end="background: linear-gradient(rgb(195, 55, 100) , rgb(29, 38, 113));"></div>
+
+		<div id="skrollr-body" class="full-page">
+
+			<!-- Banner -->
+
+			<section class="full-page v-center-wrap h-center-wrap">
+				<div class="v-center-box">
+					<h1 data-start="transform: translate( 0em ); letter-spacing: .3em; opacity: 1;"
+						data-end="transform: translate( -50em ); letter-spacing: 2em; opacity: 0;">
+						Robosoccer
+					</h1>
+				</div>
+			</section>
+
+			<!-- Brief -->
+
+			<section class="row">
+				<p class="h-center"
+				   data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					Robo soccer confronts the sheer and intensified tryst of the football lovers with robomaniacs. The love for the game just got technically amplified with the circuits and steel fighting for the precious prize. Infiltrate your robot with the soccer skill;it just might be the striker you need.
+				</p>
+			</section>
+
+			<!-- Rules -->
+
+			<section class="row space-end">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Rules
+				</h2>
+				<ul data-start="opacity: 0;"
+				   data-center="opacity: 1;">
+					<li>
+						 Robots must be manually controlled
+					</li>
+					<li>
+						Bots should not use more than 12v power supply and only one supply for whole system.You cannot use parallel batteries for generating higher power.
+					</li>
+					<li>
+						No bot can remain inactive for more than 1 min in arena exceeding which will result in disqualification.By in-activity we mean-not able to take open ball to opponent’s half.
+					</li>
+					<li>
+						If your bot is designed for capturing that ball than you can do so for not more than 5 sec.And interval between successive captures must be 10 secs.
+					</li>
+					<li>
+						 No physical intervention in the arena would be tolerated.This would lead to direct disqualification.
+					</li>
+					<li>
+						Bots should be controlled be designated controller/manual switching and not by physical pushing or pulling.
+					</li>
+					<li>
+						 Any kind of weapon that are intentionally added to harm the opponent would not be accepted.
+					</li>
+					<li>
+						Dimensions of bot must follow below mentioned criteria:<br>
+						At most 30cm in width<br>
+						At most 30cm in length and<br>
+						At most 15cm in height.
+					</li>
+					<li>
+						Weight of bot must not exceed 900g under any circumstance.Weight of external power source would not be considered in weight of bot.
+					</li>
+					<li>
+						 Judge’s decision at any point would be final.
+					</li>
+					<li>
+						Organisers are bound to disqualify any team breaking the rules
+					</li>
+				</ul>
+			</section>
+
+		</div>
+
+		<script src="scripts/three.js"></script>
+		<script>
+			var hlow = 0.5;
+			var hrange = 0.3;
+			var sval = 0.75;
+			var vlow = 0.25;
+			var vrange = 0.5;
+		</script>
+		<script src="scripts/sphere.js"></script>
+		<script src="scripts/skrollr.js"></script>
+		<script>
+			var s = skrollr.init( { forceHeight: false } );
+		</script>
+	</body>
+</html>

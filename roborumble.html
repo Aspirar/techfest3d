@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Terra Technica 2017</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="stylesheets/fonts.css">
+		<link rel="stylesheet" href="stylesheets/reset.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+
+	<body>
+		<div id="sphere-container"
+			 data-start="background: linear-gradient(rgb(48, 232, 191), rgb(255, 130, 53));"
+			 data-end="background: linear-gradient(rgb(195, 55, 100) , rgb(29, 38, 113));"></div>
+
+		<div id="skrollr-body" class="full-page">
+
+			<!-- Banner -->
+
+			<section class="full-page v-center-wrap h-center-wrap">
+				<div class="v-center-box">
+					<h1 data-start="transform: translate( 0em ); letter-spacing: .3em; opacity: 1;"
+						data-end="transform: translate( -50em ); letter-spacing: 2em; opacity: 0;">
+						Robo<br>Rumble
+					</h1>
+				</div>
+			</section>
+
+			<!-- Brief -->
+
+			<section class="row">
+				<p class="h-center"
+				   data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					Walking on walls has always been fascinating. Calm down, there isn't any trespassing and stealing here. Destroy the walls of your thoughts to see your creation treading on the vertical. Race up with other bots and score the basket in the fastest time. Defy gravity; it pulls down all. Vertical is the new horizontal, the Escalades.
+				</p>
+			</section>
+
+			<!-- Problem Statement -->
+
+			<section class="row">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Problem Statement
+				</h2>
+				<p data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					Design a robot which climbs the pole and has a mechanism to hit the ball mounted on the top of the pole
+				</p>
+			</section>
+
+			<!-- Rules -->
+
+			<div class="clearfix">
+				<section class="row clearfix align-right">
+					<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+						data-center="transform: translate( 0em ); letter-spacing: .3em;">
+						Rules
+					</h2>
+					<ul data-start="opacity: 0;"
+						data-center="opacity: 1;"
+						data-end="opacity: 0;">
+						<li>
+		        			Max team size: 4, single person entry is not allowed.
+		        		</li>
+		        		<li>
+		        			Robots must be manually controlled; autonomous bots will not be allowed.
+		        		</li>
+		        		<li>
+		        			Bots should not use more than 12V power supply and only one supply for whole system. You cannot use parallel batteries for generating higher power.
+		        		</li>
+		        		<li>
+		        			No physical intervention in the arena would be tolerated. This would lead to direct disqualification. You may call for a replay .
+		        		</li>
+		        		<li>
+		        			The pole climber will have to climb the pole and hit the ball placed at the top of the pole with arm of bot in such a way that It goes into the basket. 
+		        		</li>
+		        		<li>
+		        			Bots should be controlled by designated controller/ manual switching and not by physical pushing or pulling.
+		        		</li>
+		        		<li>
+		        			 Judge's decision at any point would be final.Organizers are bound to disqualify any team breaking the rules.
+		        		</li>
+		        		<li>
+		        			Dimensions of the bot should not exceed 250mm x 250mm x 250mm . Bot's arm will be included in the dimensions of the bot allowed.
+		        		</li>
+		        		<li>
+		        			Each participating team shall be allowed to participate with only one bot. And same bot (as used in first round) shall be used in consequent matches/rounds; no modification in bots shall be allowed after commencing of tournament.
+		        		</li>
+		        		<li>
+		        			Each team will be given 1 minute in which they have to score maximum point they can. If bot is not working properly or stops in middle, team can ask for a replay. Maximum 2 replays can be called by each team consecutively when their turn is going on. Once their turn gets over, they will not be allowed to replay. the teams will have to restart from the initial position after every attempt.
+		        		</li>
+		        		<li>
+		        			Scoring:<br>
+		        			Upper Basket   50<br>
+		        			Middle Basket  20<br>
+		        			Lower Basket   10
+		        		</li>
+		        		<li>
+		        			Dimensions of baskets<br>
+		        			Uppermost   100 mm<br>
+		        			Middle  	150 mm<br>
+		        			Lower   	200 mm
+		        		</li>
+					</ul>
+				</section>
+			</div>
+
+			<!-- Arena -->
+
+			<section class="row">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;"
+					class="h-center-wrap">
+					Arena
+				</h2>
+				<img class="image h-center"
+					src="assets/images/events/roborumble.png"
+					data-start="opacity: 0;"
+					data-center="opacity: 1;"
+					data-end="opacity: 0;">
+				<p data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;"
+				   class="h-center h-center-wrap space-top">
+					Tentative layout of the arrangement
+				</p>
+			</section>
+
+			<!-- Contact -->
+
+			<div class="clearfix">
+				<section class="row clearfix align-right space-end">
+					<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+						data-center="transform: translate( 0em ); letter-spacing: .3em;">
+						Contact
+					</h2>
+					<p data-start="opacity: 0;"
+						data-center="opacity: 1;">
+						Ayush Pranav<br>7289017595<br>
+						Ashwani Kumar Chaurasia<br>9034092964
+					</p>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="scripts/three.js"></script>
+		<script>
+			var hlow = 0.5;
+			var hrange = 0.3;
+			var sval = 0.75;
+			var vlow = 0.25;
+			var vrange = 0.5;
+		</script>
+		<script src="scripts/sphere.js"></script>
+		<script src="scripts/skrollr.js"></script>
+		<script>
+			var s = skrollr.init( { forceHeight: false } );
+		</script>
+	</body>
+</html>

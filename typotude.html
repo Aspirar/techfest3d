@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Terra Technica 2017</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="stylesheets/fonts.css">
+		<link rel="stylesheet" href="stylesheets/reset.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+
+	<body>
+		<div id="sphere-container"
+			data-start="background: linear-gradient(rgb(247, 151, 30), rgb(255, 210, 0));"
+			data-end="background: linear-gradient(rgb(9, 48, 40), rgb(35, 122, 87));"></div>
+
+		<div id="skrollr-body" class="full-page">
+
+			<!-- Banner -->
+
+			<section class="full-page v-center-wrap h-center-wrap">
+				<div class="v-center-box">
+					<h1 data-start="transform: translate( 0em ); letter-spacing: .3em; opacity: 1;"
+						data-end="transform: translate( -50em ); letter-spacing: 2em; opacity: 0;">
+						Typotude
+					</h1>
+				</div>
+			</section>
+
+			<!-- Description -->
+
+			<section class="row">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Description
+				</h2>
+				<ul data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					<li>
+						Game type: individual ( only one player can participate from one user id,it’s not a team game)
+					</li>
+					<li>
+						The game is divided into two phases. In the first phase the player has to solve basic aptitude questions. 
+					</li>
+					<li>
+						 Number of questions solved would act as a fuel which is used for driving car in the second phase of the game. I.e.  More the number of questions solved more will be the quantity of fuel the player will get to drive the car.
+					</li>
+					<li>
+						The player can leave the first phase any time. But after leaving this phase he/she cannot return back to this phase to solve more problems.
+					</li>
+					<li>
+						In the second phase player needs to type the words displayed on the screen. Typing speed of the player corresponds to the driving speed of the car.
+					</li>
+					<li>
+						 In a particular time interval, fuel tank keeps on decreasing. The player has to type as many words as possible before his/her car’s fuel tank gets empty.
+					</li>
+					<li>
+						There will be penalty for wrong typed words.
+					</li>
+					<li>
+						 Winner will be decided on the basis of accuracy, number of words typed and taking into account penalties due to mistyped words.
+					</li>
+				</ul>
+			</section>
+
+			<!-- Contact -->
+
+			<div class="clearfix">
+				<section class="row clearfix align-right space-end">
+					<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+						data-center="transform: translate( 0em ); letter-spacing: .3em;">
+						Contact
+					</h2>
+					<p data-start="opacity: 0;"
+						data-center="opacity: 1;">
+						Aadil Ehsan<br>7210209309<br>
+					</p>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="scripts/three.js"></script>
+		<script>
+			var hlow = 0.5;
+			var hrange = 0.3;
+			var sval = 0.75;
+			var vlow = 0.25;
+			var vrange = 0.5;
+		</script>
+		<script src="scripts/sphere.js"></script>
+		<script src="scripts/skrollr.js"></script>
+		<script>
+			var s = skrollr.init( { forceHeight: false } );
+		</script>
+	</body>
+</html>
