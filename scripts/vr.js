@@ -23,7 +23,7 @@ var havePointerLock = 'pointerLockElement'       in document
 
 var haveDeviceOrientation = 'onorientationchange' in window;
 
-if ( havePointerLock ) {
+if ( havePointerLock && !haveDeviceOrientation ) {
 
 	var element = document.body;
 
