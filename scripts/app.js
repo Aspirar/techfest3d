@@ -18,6 +18,29 @@ var instructions = document.getElementById( 'instructions-inner' );
 var startButton  = document.getElementById( 'start-btn'    );
 var clickButton  = document.getElementById( 'click-icon'   );
 var jumpButton   = document.getElementById( 'jump-icon'    );
+var menuButton   = document.getElementById( 'menu-icon'    );
+var crossButton  = document.getElementById( 'cross-icon'   );
+var nav          = document.getElementById( 'nav'          );
+var eventLink    = document.getElementById( 'events-link'  );
+var eventLinks   = document.getElementById( 'e1'           );
+
+menuButton.addEventListener( 'click', function () {
+
+	nav.classList.add( 'visible' );
+
+} );
+
+crossButton.addEventListener( 'click', function () {
+
+	nav.classList.remove( 'visible' );
+
+} );
+
+eventLink.addEventListener( 'click', function () {
+
+	eventLinks.classList.toggle( 'visible' );
+
+} );
 
 var havePointerLock = 'pointerLockElement'       in document
 				   || 'mozPointerLockElement'    in document
@@ -25,7 +48,7 @@ var havePointerLock = 'pointerLockElement'       in document
 
 var haveDeviceOrientation = 'onorientationchange' in window;
 
-if ( havePointerLock ) {
+if ( havePointerLock && !haveDeviceOrientation ) {
 
 	var element = document.body;
 
@@ -107,6 +130,8 @@ function onMouseDown( event ) {
 
 	clickraycaster.set( camera.getWorldPosition(), camera.getWorldDirection() );
 	var intersections = clickraycaster.intersectObjects( specialObjects );
+
+	console.log(camera.getWorldPosition());
 
 	if ( intersections.length > 0 ) {
 
@@ -209,7 +234,7 @@ function init() {
 				break;
 
 			case 32:
-				if ( canJump === true ) velocity.y += 300;
+				if ( canJump === true ) velocity.y += 1000;
 				canJump = false;
 				break;
 
@@ -380,11 +405,11 @@ function animate() {
 
 		}
 
-		if ( moveForward )  velocity.z -= 400.0 * delta;
-		if ( moveBackward ) velocity.z += 400.0 * delta;
+		if ( moveForward )  velocity.z -= 1000.0 * delta;
+		if ( moveBackward ) velocity.z += 1000.0 * delta;
 
-		if ( moveLeft )  velocity.x -= 400.0 * delta;
-		if ( moveRight ) velocity.x += 400.0 * delta;
+		if ( moveLeft )  velocity.x -= 1000.0 * delta;
+		if ( moveRight ) velocity.x += 1000.0 * delta;
 
 		if ( isOnObject === true ) {
 

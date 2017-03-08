@@ -54,9 +54,9 @@ function addParticles( scene ) {
 	var geometry = new THREE.Geometry();
 	var geometry1;
 
-	var geometry1 = new THREE.PlaneGeometry( 400, 400, 30, 30 );
+	var geometry1 = new THREE.PlaneGeometry( 600, 600, 60, 60 );
 	geometry1.rotateX( -Math.PI / 2 );
-	geometry1.translate( -50, 70, -500 );
+	geometry1.translate( -50, 70, -750 );
 	geometry.merge( geometry1 );
 
 	geometry1 = new THREE.TorusKnotGeometry( 20, 10, 100, 16, 1, 9 );
@@ -80,7 +80,7 @@ function addParticles( scene ) {
 	geometry.merge( geometry1 );
 
 	geometry1 = new THREE.TorusKnotGeometry( 40, 40, 100, 10, 8, 9 );
-	geometry1.translate( -50, 100, -500 );
+	geometry1.translate( -50, 100, -750 );
 	geometry.merge( geometry1 );
 
 	geometry1 = new THREE.SphereGeometry( 100, 50, 50 );

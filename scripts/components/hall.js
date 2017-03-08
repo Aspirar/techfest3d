@@ -26,7 +26,7 @@ function makeHall() {
 
 function addHalls( sene, objects ) {
 
-	var num = 8;
+	var num = 20;
 	var light;
 
 	var geometry = new THREE.Geometry();
@@ -35,7 +35,7 @@ function addHalls( sene, objects ) {
 
 		var angle = i * 2 * Math.PI / num;
 		var hallGeometry = makeHall();
-		hallGeometry.translate( 200 * Math.cos( angle ), 0, 200 * Math.sin( angle ) );
+		hallGeometry.translate( 350 * Math.cos( angle ), 0, 350 * Math.sin( angle ) );
 		geometry.merge( hallGeometry );
 
 		// light = new THREE.PointLight( 0xffffff, 3, 400, 2 );
@@ -49,7 +49,7 @@ function addHalls( sene, objects ) {
 	var material = new THREE.MeshLambertMaterial( { vertexColors: THREE.VertexColors, shading: THREE.FlatShading } );
 
 	var mesh = new THREE.Mesh( geometry, material );
-	mesh.position.set( -50, 0, -500 );
+	mesh.position.set( -50, 0, -750 );
 	scene.add( mesh );
 
 	objects.push( mesh );
