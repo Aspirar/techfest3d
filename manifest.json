@@ -1,7 +1,6 @@
 {
     "short_name": "Terra Technica",
     "name": "Terra Technical 2017",
-    "start_url": "/vr.html",
     "display": "fullscreen",
     "orientation": "landscape",
     "icons": [
