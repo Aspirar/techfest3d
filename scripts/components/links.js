@@ -25,6 +25,21 @@ function makeDomes( scene, objects ) {
 	geometry1.translate( 255, 0, -130 );
 	geometry.merge( geometry1 );
 
+	geometry1 = makeDomeGeometry();
+	geometry1.rotateY( 1.2 * Math.PI );
+	geometry1.translate( -180, 0, -250 );
+	geometry.merge( geometry1 );
+
+	geometry1 = makeDomeGeometry();
+	geometry1.rotateY( 1.2 * Math.PI );
+	geometry1.translate( -330, 0, -270 );
+	geometry.merge( geometry1 );
+
+	geometry1 = makeDomeGeometry();
+	geometry1.rotateY( 1.2 * Math.PI );
+	geometry1.translate( -255, 0, -130 );
+	geometry.merge( geometry1 );
+
 	addVertexColors( geometry.faces, 0.3, 0.2, 0.92, 0.3, 0.1 );
 
 	material = new THREE.MeshLambertMaterial( {
@@ -97,6 +112,51 @@ function addLinks( scene, objects, specialObjects ) {
 		mesh = new THREE.Mesh( geometry, material );
 		mesh.userLink = 'exhibitions.html';
 		mesh.position.set( 200, 0, -135 );
+		scene.add( mesh );
+
+		objects.push( mesh );
+		specialObjects.push( mesh );
+
+		geometry = makeHeadingText( 'SPONSORS', font );
+		geometry.rotateY( Math.PI / 2 );
+
+		addVertexColors( geometry.faces, 0.5, 0.2, 0.75, 0.3, 0.3 );
+
+		material = new THREE.MeshPhongMaterial( { vertexColors: THREE.VertexColors, shading: THREE.FlatShading } );
+
+		mesh = new THREE.Mesh( geometry, material );
+		mesh.userLink = 'sponsors.html';
+		mesh.position.set( -137, 0, -203 );
+		scene.add( mesh );
+
+		objects.push( mesh );
+		specialObjects.push( mesh );
+
+		geometry = makeHeadingText( 'CONTACT', font );
+		geometry.rotateY( Math.PI / 2 );
+
+		addVertexColors( geometry.faces, 0.5, 0.2, 0.75, 0.3, 0.3 );
+
+		material = new THREE.MeshPhongMaterial( { vertexColors: THREE.VertexColors, shading: THREE.FlatShading } );
+
+		mesh = new THREE.Mesh( geometry, material );
+		mesh.userLink = 'contact.html';
+		mesh.position.set( -216, 0, -96 );
+		scene.add( mesh );
+
+		objects.push( mesh );
+		specialObjects.push( mesh );
+
+		geometry = makeHeadingText( 'SPEAKERS', font );
+		geometry.rotateY( Math.PI / 2 );
+
+		addVertexColors( geometry.faces, 0.5, 0.2, 0.75, 0.3, 0.3 );
+
+		material = new THREE.MeshPhongMaterial( { vertexColors: THREE.VertexColors, shading: THREE.FlatShading } );
+
+		mesh = new THREE.Mesh( geometry, material );
+		mesh.userLink = 'speakers.html';
+		mesh.position.set( -288, 0, -230 );
 		scene.add( mesh );
 
 		objects.push( mesh );

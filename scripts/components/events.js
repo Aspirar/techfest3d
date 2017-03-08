@@ -15,16 +15,16 @@ function addEvents( scene, objects, specialObjects ) {
 		material = new THREE.MeshPhongMaterial( { vertexColors: THREE.VertexColors, shading: THREE.FlatShading } );
 
 		mesh = new THREE.Mesh( geometry, material );
-		mesh.position.set( -50, 0, -500 );
+		mesh.position.set( -50, 0, -750 );
 		scene.add( mesh );
 
 		objects.push( mesh );
 
 		light = new THREE.PointLight( 0xffffff, 3, 1200, 2 );
-		light.position.set( -50, 20, -500 );
+		light.position.set( -50, 20, -750 );
 		scene.add( light );
 
-		var num = 8;
+		var num = 20;
 		var geometry2;
 
 		for ( var i = 0; i < num; i++ ) {
@@ -78,6 +78,79 @@ function addEvents( scene, objects, specialObjects ) {
 					geometry2 = new THREE.CylinderGeometry( 7, 4, 5, 5 );
 					userLink = 'puckcollect.html';
 					break;
+
+				case 8:
+					text = 'Capture the Flag';
+					geometry2 = new THREE.BoxGeometry( 5, 5, 5 );
+					userLink = 'capturetheflag.html';
+					break;
+
+				case 9:
+					text = 'Design and Innovation';
+					geometry2 = new THREE.ConeGeometry( 5, 7, 8 );
+					userLink = 'design.html';
+					break;
+
+				case 10:
+					text = 'NITD Expo';
+					geometry2 = new THREE.CylinderGeometry( 5, 5, 10, 8 );
+					userLink = 'expo.html';
+					break;
+
+				case 11:
+					text = 'Innovatica';
+					geometry2 = new THREE.DodecahedronGeometry( 5 );
+					userLink = 'innovatica.html';
+					break;
+
+				case 12:
+					text = 'Maze Runner';
+					geometry2 = new THREE.IcosahedronGeometry( 5 );
+					userLink = 'mazerunner.html';
+					break;
+
+				case 13:
+					text = 'Youth Parliament';
+					geometry2 = new THREE.OctahedronGeometry( 5 );
+					userLink = 'parliament.html';
+					break;
+
+				case 14:
+					text = 'Probability Made Easy';
+					geometry2 = new THREE.SphereGeometry( 5, 8, 8 );
+					userLink = 'probability.html';
+					break;
+
+				case 15:
+					text = 'Robo Rumble';
+					geometry2 = new THREE.CylinderGeometry( 7, 4, 5, 5 );
+					userLink = 'roborumble.html';
+					break;
+
+				case 16:
+					text = 'Robo Soccer';
+					geometry2 = new THREE.BoxGeometry( 5, 5, 5 );
+					userLink = 'robosoccer.html';
+					break;
+
+				case 17:
+					text = 'Robo Wars';
+					geometry2 = new THREE.ConeGeometry( 5, 7, 8 );
+					userLink = 'robowars.html';
+					break;
+
+				case 18:
+					text = 'Virtual Stock Market';
+					geometry2 = new THREE.CylinderGeometry( 5, 5, 10, 8 );
+					userLink = 'stockmarket.html';
+					break;
+
+				case 19:
+					text = 'Typotude';
+					geometry2 = new THREE.DodecahedronGeometry( 5 );
+					userLink = 'typotude.html';
+					break;
+
 			}
 
 			geometry = makeText( text, font );
@@ -88,7 +161,7 @@ function addEvents( scene, objects, specialObjects ) {
 
 			mesh = new THREE.Mesh( geometry, material );
 			var angle = i * 2 * Math.PI / num;
-			mesh.position.set( - 50 + 150 * Math.cos( angle ), 0, - 500 + 150 * Math.sin( angle ) );
+			mesh.position.set( - 50 + 300 * Math.cos( angle ), 0, - 750 + 300 * Math.sin( angle ) );
 			mesh.rotation.y = -angle - Math.PI / 2	;
 			mesh.userLink = userLink;
 			scene.add( mesh );
@@ -101,7 +174,7 @@ function addEvents( scene, objects, specialObjects ) {
 			material = new THREE.MeshPhongMaterial( { vertexColors: THREE.VertexColors, shading: THREE.FlatShading } );
 
 			mesh = new THREE.Mesh( geometry2, material );
-			mesh.position.set( - 50 + 200 * Math.cos( angle ), 20, - 500 + 200 * Math.sin( angle ) );
+			mesh.position.set( - 50 + 350 * Math.cos( angle ), 20, - 750 + 350 * Math.sin( angle ) );
 			mesh.userLink = userLink;
 			scene.add( mesh );
 

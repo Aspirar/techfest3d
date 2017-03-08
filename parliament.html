@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Terra Technica 2017</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="stylesheets/fonts.css">
+		<link rel="stylesheet" href="stylesheets/reset.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+
+	<body>
+		<div id="sphere-container"
+			 data-start="background: linear-gradient(rgb(247, 151, 30), rgb(255, 210, 0));"
+			 data-end="background: linear-gradient(rgb(9, 48, 40), rgb(35, 122, 87));"></div>
+
+		<div id="skrollr-body" class="full-page">
+
+			<!-- Banner -->
+
+			<section class="full-page v-center-wrap h-center-wrap">
+				<div class="v-center-box">
+					<h1 data-start="transform: translate( 0em ); letter-spacing: .3em; opacity: 1;"
+						data-end="transform: translate( -50em ); letter-spacing: 2em; opacity: 0;">
+						Youth<br>Parliament
+					</h1>
+				</div>
+			</section>
+
+			<!-- Brief -->
+
+			<section class="row">
+				<p class="h-center"
+				   data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+					Delegates of various colleges will be given various agendas on a specified topic.  A healthy discussion under the supervision of the panel of judges is expected. Later, the panel decides the winners. The exact agenda and format will be disclosed 3/4 weeks before the event day.
+				</p>
+			</section>
+
+			<!-- Contact -->
+
+			<div class="clearfix">
+				<section class="row clearfix align-right space-end">
+					<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+						data-center="transform: translate( 0em ); letter-spacing: .3em;">
+						Contact
+					</h2>
+					<p data-start="opacity: 0;"
+						data-center="opacity: 1;">
+						Yoga<br>8750267966<br>
+						Sanyogita<br>9560494624
+					</p>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="scripts/three.js"></script>
+		<script>
+			var hlow = 0.5;
+			var hrange = 0.3;
+			var sval = 0.75;
+			var vlow = 0.25;
+			var vrange = 0.5;
+		</script>
+		<script src="scripts/sphere.js"></script>
+		<script src="scripts/skrollr.js"></script>
+		<script>
+			var s = skrollr.init( { forceHeight: false } );
+		</script>
+	</body>
+</html>

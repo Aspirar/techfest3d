@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Terra Technica 2017</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="stylesheets/fonts.css">
+		<link rel="stylesheet" href="stylesheets/reset.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+
+	<body>
+		<div id="sphere-container"
+			 data-start="background: linear-gradient(rgb(67, 198, 172), rgb(248, 255, 174));"
+			 data-end="background: linear-gradient(rgb(64, 58, 62) , rgb(190, 88, 105));"></div>
+
+		<div id="skrollr-body" class="full-page">
+
+			<!-- Banner -->
+
+			<section class="full-page v-center-wrap h-center-wrap">
+				<div class="v-center-box">
+					<h1 data-start="transform: translate( 0em ); letter-spacing: .3em; opacity: 1;"
+						data-end="transform: translate( -50em ); letter-spacing: 2em; opacity: 0;">
+						Speakers
+					</h1>
+				</div>
+			</section>
+
+			<!-- Content -->
+
+			<section class="row space-end">
+				<h2 data-start="transform: translate( -50em ); letter-spacing: 2em;"
+					data-center="transform: translate( 0em ); letter-spacing: .3em;">
+					Mr. Srijan Pal Singh
+				</h2>
+				<h3 data-start="opacity: 0;"
+				   data-center="opacity: 1;"
+				   data-end="opacity: 0;">
+				   Speaker, Social Entrepreneur
+				</h3>
+				<p data-start="opacity: 0;"
+				   data-center="opacity: 1;">
+					Srijan Pal Singh graduated from the Institute of Engineering and Technology, Lucknow, and obtained his degree in Management from the Indian Institute of Management Ahmedabad (IIMA). Working with eminent personalities like Dr A. P. J. Abdul Kalam, he has been consistently promoting assignments on social causes, such as "What Can I Give Movement", Energy Independence for the Nation, nuclear and space missions. He has been also extending the requisite urban amenities to the rural India that straightforwardly targets the apt developmental requirements of the rural environments in the nation. Highly experienced in his technicalities, he renders necessary lectures on community action, leadership and development in the Indian Institute of Management, Ahmedabad, and the Indian Institute of Management, Indore. He has spoken at various renowned events including TEDx Events, Australia India Youth Dialogue, and has penned down articles in the leading national newspapers like The Rajasthan Patrika, and The Hindu. Furthermore, Srijan Pal Singh has co-authored a bestselling book with Dr Kalam titled, ‘Target 3 Billion’, which is based on sustainable development of the rural areas of the world. He ushers to believe in modest living, liberty of thoughts and entrusts worthy compassion in life.
+				</p>
+			</section>
+
+		</div>
+
+		<script src="scripts/three.js"></script>
+		<script>
+			var hlow = 0.5;
+			var hrange = 0.3;
+			var sval = 0.75;
+			var vlow = 0.25;
+			var vrange = 0.5;
+		</script>
+		<script src="scripts/sphere.js"></script>
+		<script src="scripts/skrollr.js"></script>
+		<script>
+			var s = skrollr.init( { forceHeight: false } );
+		</script>
+	</body>
+</html>
