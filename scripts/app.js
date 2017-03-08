@@ -234,7 +234,7 @@ function init() {
 				break;
 
 			case 32:
-				if ( canJump === true ) velocity.y += 1000;
+				if ( canJump === true ) velocity.y += 300;
 				canJump = false;
 				break;
 
@@ -405,11 +405,11 @@ function animate() {
 
 		}
 
-		if ( moveForward )  velocity.z -= 1000.0 * delta;
-		if ( moveBackward ) velocity.z += 1000.0 * delta;
+		if ( moveForward )  velocity.z -= 400.0 * delta;
+		if ( moveBackward ) velocity.z += 400.0 * delta;
 
-		if ( moveLeft )  velocity.x -= 1000.0 * delta;
-		if ( moveRight ) velocity.x += 1000.0 * delta;
+		if ( moveLeft )  velocity.x -= 400.0 * delta;
+		if ( moveRight ) velocity.x += 400.0 * delta;
 
 		if ( isOnObject === true ) {
 
