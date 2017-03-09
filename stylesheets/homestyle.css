@@ -163,3 +163,13 @@ a {
 	color: #c6153c;
 	font-weight: 700;
 }
+
+.sponsors-wrap {
+	margin-top: 2rem;
+}
+.sponsor-img {
+	max-width: 100%;
+	height: 3rem;
+	padding: 0 1rem;
+	background-color: #eee;
+}
