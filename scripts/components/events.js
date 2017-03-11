@@ -80,7 +80,7 @@ function addEvents( scene, objects, specialObjects ) {
 					break;
 
 				case 8:
-					text = 'Capture the Flag';
+					text = 'root@CTF';
 					geometry2 = new THREE.BoxGeometry( 5, 5, 5 );
 					userLink = 'capturetheflag.html';
 					break;
