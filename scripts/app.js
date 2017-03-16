@@ -289,7 +289,7 @@ function init() {
 	container.addEventListener( 'touchend'  , onTouchEnd  , false );
 
 	raycaster = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, -1, 0 ), 0, 10 );
-	clickraycaster = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, 0, -1 ), 0, 100 );
+	clickraycaster = new THREE.Raycaster( new THREE.Vector3(), new THREE.Vector3( 0, 0, -1 ), 0, 200 );
 
 	//Sky
 
