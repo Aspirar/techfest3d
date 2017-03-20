@@ -26,7 +26,7 @@ function makeHall() {
 
 function addHalls( sene, objects ) {
 
-	var num = 20;
+	var num = 19;
 	var light;
 
 	var geometry = new THREE.Geometry();
