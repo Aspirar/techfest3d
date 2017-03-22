@@ -14,6 +14,34 @@ a {
 	color: inherit;
 }
 
+.strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.strike span {
+    position: relative;
+    display: inline-block;
+}
+.strike span:before,
+.strike span:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    height: 1px;
+    background-color: white;
+}
+.strike span:before {
+    right: 100%;
+    margin-right: 35px;
+}
+.strike span:after {
+    left: 100%;
+    margin-left: 35px;
+}
+
 /*----------------------------------------------------------------.
 |                             Images                              |
 `----------------------------------------------------------------*/
@@ -205,4 +233,112 @@ li:last-child {
     z-index: -1000;
     overflow: hidden;
     background: linear-gradient(to left top, #ff6e7f , #bfe9ff);
+}
+
+/*----------------------------------------------------------------.
+|                               2D                                |
+`----------------------------------------------------------------*/
+
+.logo {
+    font-size: .6rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Montserrat';
+}
+.logo div:first-child {
+    font-size: .9em;
+    letter-spacing: 1.5em;
+    padding-left: 1.5em;
+}
+.logo h1 {
+    font-size: 3em;
+    letter-spacing: .2em;
+    padding-left: .2em;
+    line-height: 2.25;
+    font-weight: 200;
+    margin: 0;
+    font-family: 'Montserrat';
+}
+.logo .year {
+    font-size: 1.2em;
+    letter-spacing: 1em;
+    margin-right: 0em;
+    padding-left: 1em;
+}
+@media all and (min-width: 500px) {
+    .logo {
+        font-size: .75rem;
+    }
+}
+@media all and (min-width: 700px) {
+    .logo {
+        font-size: 1rem;
+    }
+}
+
+.icon-img {
+    position: fixed;
+    display: none;
+    z-index: 1000;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: .5rem;
+    border-radius: 50%;
+    bottom: 1rem;
+    cursor: pointer;
+}
+
+#menu-icon,
+#cross-icon {
+    top: 1rem;
+    left: 1rem;
+    display: block;
+}
+
+.primary-nav {
+    font-size: 1.5rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 25rem;
+    max-width: 100%;
+    border-right: .25rem solid #eee;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+    z-index: 1000;
+    color: #eee;
+    padding: 4em 1em;
+    display: none;
+    font-family: 'Montserrat';
+}
+.primary-nav.visible {
+    display: block;
+}
+
+.primary-nav ul {
+    list-style-type: none;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: .3em;
+}
+.primary-nav li {
+    line-height: 1.5;
+    padding: 2em 0;
+}
+
+#events-link {
+    cursor: pointer;
+}
+#e1 {
+    display: none;
+}
+#e1.visible {
+    display: block;
+}
+
+.lhead {
+    color: #c6153c;
+    font-weight: 700;
 }
