@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Terra Technica 2017</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="stylesheets/fonts.css">
+        <link rel="stylesheet" href="stylesheets/reset.css">
+        <link rel="stylesheet" href="stylesheets/style.css">
+
+        <style>
+            html, body {
+                overflow: hidden;
+            }
+        </style>
+    </head>
+
+    <body>
+        <section id="container" style="position: fixed; width: 100%; height: 100%;
+        z-index: -1000; left: 0; top: 0;">
+        </section>
+        <section class="full-page v-center-wrap h-center-wrap">
+            <div class="v-center-box logo">
+                <div>NIT Delhi Tech Fest</div>
+                <h1>Terra Technica</h1>
+                <div class="strike"><span class="year">2017</span></div>
+            </div>
+         </section>
+
+         <img id="menu-icon" class="icon-img" src="assets/images/menu.svg">
+
+         <nav id="nav" class="primary-nav v-center-wrap">
+                <div class="v-center-box">
+                    <ul>
+                        <a href="about.html" target="_blank"><li>About</li></a>
+                        <li>
+                            <div id="events-link">Events</div>
+                            <ul id="e1">
+                                <li class="lhead">Coding</li>
+                                <a href="nitdpl.html" target="_blank"><li>NITD Programming League</li></a>
+                                <a href="reverse-coding.html" target="_blank"><li>Reverse Coding</li></a>
+                                <a href="clash-of-codes.html" target="_blank"><li>Clash of Codes</li></a>
+                                <a href="hackathon.html" target="_blank"><li>Hackathon</li></a>
+                                <a href="untangle.html" target="_blank"><li>Untangle the Tangle</li></a>
+                                <a href="capturetheflag.html" target="_blank"><li>root@CTF</li></a>
+
+                                <li class="lhead">Robotics</li>
+                                <a href="robowars.html" target="_blank"><li>Robo Wars</li></a>
+                                <a href="death-race.html" target="_blank"><li>Death Race</li></a>
+                                <a href="robosoccer.html" target="_blank"><li>Robosoccer</li></a>
+                                <a href="codemb.html" target="_blank"><li>CodEmb</li></a>
+                                <a href="puckcollect.html" target="_blank"><li>Puck Collect</li></a>
+                                <a href="design.html" target="_blank"><li>Design and Innovation</li></a>
+                                <a href="mazerunner.html" target="_blank"><li>Maze Runner</li></a>
+                                <a href="roborumble.html" target="_blank"><li>Robo Rumble</li></a>
+
+                                <li class="lhead">Online Events</li>
+                                <a href="stockmarket.html" target="_blank"><li>Virtual Stock Market</li></a>
+                                <a href="innovatica.html" target="_blank"><li>Innovatica</li></a>
+                                <a href="typotude.html" target="_blank"><li>Typotude</li></a>
+
+                                <li class="lhead">Misc</li>
+                                <a href="expo.html" target="_blank"><li>NITD Expo</li></a>
+                                <a href="parliament.html" target="_blank"><li>Youth Parliament</li></a>
+                            </ul>
+                        </li>
+                        <a href="https://www.thecollegefever.com/events/terratechnica17" target="_blank"><li>Register</li></a>
+                        <a href="initiatives.html" target="_blank"><li>Initiatives</li></a>
+                        <a href="exhibitions.html" target="_blank"><li>Exhibitions</li></a>
+                        <a href="speakers.html" target="_blank"><li>Speakers</li></a>
+                        <a href="sponsors.html" target="_blank"><li>Sponsors</li></a>
+                        <a href="contact.html" target="_blank"><li>Contact</li></a>
+                    </ul>
+                </div>
+                <img id="cross-icon" class="icon-img" src="assets/images/cross.svg">
+            </nav>
+        </section>
+
+        <script>
+            var menuButton   = document.getElementById( 'menu-icon'    );
+            var crossButton  = document.getElementById( 'cross-icon'   );
+            var nav          = document.getElementById( 'nav'          );
+            var eventLink    = document.getElementById( 'events-link'  );
+            var eventLinks   = document.getElementById( 'e1'           );
+            
+            menuButton.addEventListener( 'click', function () {
+
+                nav.classList.add( 'visible' );
+
+            } );
+
+            crossButton.addEventListener( 'click', function () {
+
+                nav.classList.remove( 'visible' );
+
+            } );
+
+            eventLink.addEventListener( 'click', function () {
+
+                eventLinks.classList.toggle( 'visible' );
+
+            } );
+        </script>
+
+        <script src="scripts/three.js"></script>
+        <script id="vertexShader" type="x-shader/x-vertex">
+            void main() {
+                gl_Position = vec4(position, 1.0);
+            }
+        </script>
+        <script id="fragmentShader" type="x-shader/x-fragment">
+           // Author @patriciogv - 2015
+            // http://patriciogonzalezvivo.com
+
+            #ifdef GL_ES
+            precision mediump float;
+            #endif
+
+            uniform vec2 u_resolution;
+            uniform vec2 u_mouse;
+            uniform float u_time;
+
+            float random (in vec2 _st) { 
+                return fract(sin(dot(_st.xy,
+                                     vec2(12.9898,78.233)))* 
+                    43758.5453123);
+            }
+
+            // Based on Morgan McGuire @morgan3d
+            // https://www.shadertoy.com/view/4dS3Wd
+            float noise (in vec2 _st) {
+                vec2 i = floor(_st);
+                vec2 f = fract(_st);
+
+                // Four corners in 2D of a tile
+                float a = random(i);
+                float b = random(i + vec2(1.0, 0.0));
+                float c = random(i + vec2(0.0, 1.0));
+                float d = random(i + vec2(1.0, 1.0));
+
+                vec2 u = f * f * (3.0 - 2.0 * f);
+
+                return mix(a, b, u.x) + 
+                        (c - a)* u.y * (1.0 - u.x) + 
+                        (d - b) * u.x * u.y;
+            }
+
+            #define NUM_OCTAVES 10
+
+            float fbm ( in vec2 _st) {
+                float v = 0.0;
+                float a = 0.5;
+                vec2 shift = vec2(100.0);
+                // Rotate to reduce axial bias
+                mat2 rot = mat2(cos(0.5), sin(0.5), 
+                                -sin(0.5), cos(0.50));
+                for (int i = 0; i < NUM_OCTAVES; ++i) {
+                    v += a * noise(_st);
+                    _st = rot * _st * 2.0 + shift;
+                    a *= 0.5;
+                }
+                return v;
+            }
+
+            void main() {
+                vec2 st = gl_FragCoord.xy/u_resolution.xy*5.;
+                // st += st * abs(sin(u_time*0.1)*3.0);
+                vec3 color = vec3(0.0);
+
+                vec2 q = vec2(0.);
+                q.x = fbm( st + 0.00*u_time);
+                q.y = fbm( st + vec2(1.0));
+
+                vec2 r = vec2(0.);
+                r.x = fbm( st + 1.0*q + vec2(1.7,9.2)+ 0.15*u_time );
+                r.y = fbm( st + 1.0*q + vec2(8.3,2.8)+ 0.126*u_time);
+
+                float f = fbm(st+r);
+
+                color = mix(vec3(0.966667,0.966667,0.198039),
+                            vec3(0.901961,0.119608,0.366667),
+                            clamp((f*f)*4.0,0.0,1.0));
+
+                color = mix(color,
+                            vec3(0,0,0.164706),
+                            clamp(length(q),0.0,1.0));
+
+                color = mix(color,
+                            vec3(0.666667,1,1),
+                            clamp(length(r.x),0.0,1.0));
+
+                gl_FragColor = vec4((f*f*f+.6*f*f+.5*f)*color,1.);
+            }
+        </script>
+        <script>
+            var scene = new THREE.Scene();
+            var camera = new THREE.Camera();
+            camera.position.z += 1;
+            var renderer = new THREE.WebGLRenderer({antialias: true});
+            var geometry = new THREE.PlaneBufferGeometry(2, 2);
+            uniforms = {
+                u_time: { type: 'f', value: 1.0 },
+                u_resolution: { type: 'v2', value: new THREE.Vector2() }
+            };
+            var material = new THREE.ShaderMaterial({
+                uniforms: uniforms,
+                vertexShader: document.getElementById('vertexShader').textContent,
+                fragmentShader: document.getElementById('fragmentShader').textContent
+            });
+            var mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setClearColor(0xffffff);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            document.getElementById('container').appendChild(renderer.domElement);
+            function onWindowResize() {
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                var res;
+                if (renderer.domElement.width > renderer.domElement.height) {
+                    res = renderer.domElement.width;
+                } else {
+                    res = renderer.domElement.height;
+                }
+                uniforms.u_resolution.value.x = res;
+                uniforms.u_resolution.value.y = res;
+            }
+            window.addEventListener('resize', onWindowResize);
+            onWindowResize();
+            function animate() {
+                renderer.render(scene, camera);
+                uniforms.u_time.value += 0.007;
+                requestAnimationFrame(animate);
+            }
+            animate();
+        </script>
+
+        <!-- Google Analytics -->
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-93335264-1', 'auto');
+          ga('send', 'pageview');
+        </script>
+    </body>
+</html>

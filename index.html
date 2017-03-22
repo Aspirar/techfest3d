@@ -27,11 +27,20 @@
 
 		<section id="blocker" class="blocker">
 			<div id="instructions" class="instructions">
+				<img src="assets/images/logo-white.png" style="display: block; width: 10rem; max-width: 90%; margin-left: auto; margin-right: auto;">
 				<h1>Terra Technica 2017</h1>
+				<div style="text-transform: none; margin-bottom: 1em;">
+					15th and 16th April
+					<div id="time">
+						<span id="days"></span> DAYS TO GO
+					</div>
+					#roadToTerraTechnica
+				</div>
 				<div id="instructions-inner">
 					Move = WASD / Arrow Keys<br>
 					Jump = Space<br>
-					Click To Interact<br><br>
+					Click To Interact<br>
+					Exit = Esc<br><br>
 				</div>
 				<a id="start-btn" class="btn">Start</a>
 				<div class="sponsors-wrap">
@@ -75,9 +84,9 @@
 								<li class="lhead">Misc</li>
 								<a href="expo.html" target="_blank"><li>NITD Expo</li></a>
 								<a href="parliament.html" target="_blank"><li>Youth Parliament</li></a>
-								<a href="probability.html" target="_blank"><li>Probability Made Easy</li></a>
 							</ul>
 						</li>
+						<a href="https://www.thecollegefever.com/events/terratechnica17" target="_blank"><li>Register</li></a>
 						<a href="initiatives.html" target="_blank"><li>Initiatives</li></a>
 						<a href="exhibitions.html" target="_blank"><li>Exhibitions</li></a>
 						<a href="speakers.html" target="_blank"><li>Speakers</li></a>
@@ -120,6 +129,14 @@
 
 		  ga('create', 'UA-93335264-1', 'auto');
 		  ga('send', 'pageview');
+		</script>
+
+		<script>
+			var date = new Date(2017, 3, 15);
+			var now = new Date();
+			var diff = date.getTime() - Date.now();
+			var days = diff / (1000 * 60 * 60 * 24);
+			document.getElementById('days').innerHTML = Math.round(days);
 		</script>
 	</body>
 </html>

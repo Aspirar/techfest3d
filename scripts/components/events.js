@@ -24,7 +24,7 @@ function addEvents( scene, objects, specialObjects ) {
 		light.position.set( -50, 20, -750 );
 		scene.add( light );
 
-		var num = 20;
+		var num = 19;
 		var geometry2;
 
 		for ( var i = 0; i < num; i++ ) {
@@ -116,36 +116,30 @@ function addEvents( scene, objects, specialObjects ) {
 					break;
 
 				case 14:
-					text = 'Probability Made Easy';
-					geometry2 = new THREE.SphereGeometry( 5, 8, 8 );
-					userLink = 'probability.html';
-					break;
-
-				case 15:
 					text = 'Robo Rumble';
 					geometry2 = new THREE.CylinderGeometry( 7, 4, 5, 5 );
 					userLink = 'roborumble.html';
 					break;
 
-				case 16:
+				case 15:
 					text = 'Robo Soccer';
 					geometry2 = new THREE.BoxGeometry( 5, 5, 5 );
 					userLink = 'robosoccer.html';
 					break;
 
-				case 17:
+				case 16:
 					text = 'Robo Wars';
 					geometry2 = new THREE.ConeGeometry( 5, 7, 8 );
 					userLink = 'robowars.html';
 					break;
 
-				case 18:
+				case 17:
 					text = 'Virtual Stock Market';
 					geometry2 = new THREE.CylinderGeometry( 5, 5, 10, 8 );
 					userLink = 'stockmarket.html';
 					break;
 
-				case 19:
+				case 18:
 					text = 'Typotude';
 					geometry2 = new THREE.DodecahedronGeometry( 5 );
 					userLink = 'typotude.html';
