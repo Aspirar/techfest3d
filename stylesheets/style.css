@@ -28,6 +28,7 @@ a {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 4rem;
     max-width: 100%;
 }
 .circle-img {
@@ -166,6 +167,33 @@ li:last-child {
 }
 .space-end {
     padding-bottom: 20rem;
+}
+
+/*----------------------------------------------------------------.
+|                            Buttons                              |
+`----------------------------------------------------------------*/
+
+.register-btn {
+    display: block;
+    padding: .8em 1em .8em 1.3em;
+    border: .1em solid #fff;
+    font-size: 1.25rem;
+    font-family: 'Open Sans Condensed';
+    text-transform: uppercase;
+    letter-spacing: .3em;
+    width: 10rem;
+    margin-top: 2rem;
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+}
+.register-btn:hover {
+    background-color: white;
+    color: black;
+}
+.register-btn:active {
+    background-color: #ccc;
+    color: black;
 }
 
 /*----------------------------------------------------------------.
